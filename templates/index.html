@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
-$END$
+    <h1>Hello {{ name }}</h1>
+    <a href="{{ url_for('test') }}">Link zu Test</a><br><br>
+
+    <form>
+        <label for="vname">Vorname:
+             <input id="vname" name="vname"><br>
+        </label>
+        <label for="zname">Nachname:
+            <input id="nname" name="nname"><br>
+        </label>
+        <input type="submit" value="senden">
+    </form>
 </body>
 </html>
