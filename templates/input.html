@@ -30,19 +30,29 @@
 
 
     <!-- <h1>Hello {{ name }}</h1> -->
-    <h1>Welcome to your Expense Tracker</h1>
-    <h2>Your Dashboard</h2>
+    <h1>Welcome to your Expense Tracker</h1><br><br>
     <!-- <a href="{{ url_for('test') }}">Link zu Test</a><br><br> -->
-
-   <!-- <form>
-        <label for="vname">Vorname:
-             <input id="vname" name="vname"><br>
-        </label>
-        <label for="zname">Nachname:
-            <input id="nname" name="nname"><br>
-        </label>
+    <h2>Neue Ausgabe erfassen</h2>
+   <form>
+        <label for="eingabe">Deine Ausgabe:
+             <input id="eingabe" name="eingabe">
+        </label><br>
+        <label for="kategorie">Kategorie:
+            <input id="kategorie" name="kategorie">
+        </label><br>
+        <label for="datum">Datum:
+            <input id="datum" name="datum">
+        </label><br>
         <input type="submit" value="senden">
-    </form> -->
+    </form><br><br>
+
+    <h3>Neue Kategorie erstellen:</h3>
+    <form>
+        <label for="eingabe">Neue Kategorie:
+             <input id="eingabe" name="eingabe">
+        </label><br>
+        <input type="submit" value="erstellen">
+    </form>
 
 </body>
 </html>
