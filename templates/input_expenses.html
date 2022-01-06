@@ -1,0 +1,38 @@
+{% include "html_head.html" %}
+<body>
+    {% include "navigation.html" %}
+
+
+    <!-- <h1>Hello {{ name }}</h1> -->
+    <h1>Welcome to your Expense Tracker</h1><br><br>
+    <!-- <a href="{{ url_for('test') }}">Link zu Test</a><br><br> -->
+    <h2>Neue Ausgabe erfassen</h2>
+   <form>
+        <label for="eingabe">Deine Ausgabe:
+             <input id="eingabe" name="eingabe">
+        </label><br>
+        <label for="kategorie">Kategorie:
+            <input id="kategorie" name="kategorie">
+        </label><br><br>
+    </form><br><br>
+
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Datum wählen...</option>
+        <option value="1">Januar 2022</option>
+        <option value="2">Februar 2022</option>
+        <option value="3">März 2022</option>
+    </select><br><br>
+
+    <input type="submit" value="erfassen"><br><br>
+
+
+    <h3>Neue Kategorie erstellen:</h3>
+    <form>
+        <label for="eingabe">Neue Kategorie:
+             <input id="eingabe" name="eingabe">
+        </label><br>
+        <input type="submit" value="erstellen">
+    </form>
+
+</body>
+</html>

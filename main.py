@@ -4,13 +4,13 @@ from flask import render_template
 app = Flask("Hello World!")
 
 
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template('index.html', name="Dominik")
 
-@app.route("/input")
+@app.route("/input-expenses")
 def input():
-    return render_template('input.html', name="Dominik")
+    return render_template('input_expenses.html', name="Dominik")
 
 
 @app.route("/test")
