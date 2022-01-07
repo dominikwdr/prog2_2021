@@ -1,0 +1,23 @@
+{
+  "categories": {
+    "0" : {
+      "name": "Essen"
+    },
+    "1" : {
+      "name": "Kleidung"
+    },
+    "2" : {
+      "name": "Hobbys"
+    }
+  },
+  "transactions": {
+    "0" : {
+      "amount": 250.20,
+      "category": 0
+    },
+    "1" : {
+      "amount": 15.50,
+      "category": 1
+    }
+  }
+}

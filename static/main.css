@@ -9,7 +9,6 @@
 
 /* body */
 body {
-    padding-left: 10px;
 
 }
 
@@ -18,11 +17,11 @@ body {
 /* navbar */
 
 .navbar {
-    background: blue;
+    background: orange;
 }
 
 
 
 h1 {
-    color: green;
+    color: orange;
 }
