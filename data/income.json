@@ -1,0 +1,48 @@
+{
+    "categories":{
+        "Babysitten":{
+            "name":"Babysitten"
+        },
+        "Lohn 2":{
+            "name":"Lohn 2"
+        },
+        "Lohn Arbeitgeber 1":{
+            "name":"Lohn Arbeitgeber 1"
+        },
+        "Nebenjob":{
+            "name":"Nebenjob"
+        },
+        "test0":{
+            "name":"test0"
+        },
+        "test1":{
+            "name":"test1"
+        }
+    },
+    "transactions":{
+        "1641989039000":{
+            "amount":"90.6",
+            "category":"Lohn 2",
+            "datetime":"12.01.2022 13:03:59",
+            "title":"Lohn August"
+        },
+        "1641989055000":{
+            "amount":"90.6",
+            "category":"Lohn 2",
+            "datetime":"12.01.2022 13:04:15",
+            "title":"Lohn August"
+        },
+        "1642103153000":{
+            "title":"pascal",
+            "amount":"58",
+            "category":"Lohn 2",
+            "datetime":"13.01.2022 20:45:53"
+        },
+        "1642103885000":{
+            "title":"Test99",
+            "amount":"98",
+            "category":"Lohn 2",
+            "datetime":"13.01.2022 20:58:05"
+        }
+    }
+}

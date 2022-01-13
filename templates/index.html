@@ -2,13 +2,61 @@
 <body>
     {% include "navigation.html" %}
 
-    <!-- <h1>Hello {{ name }}</h1> -->
     <h1>Welcome to your Expense Tracker</h1>
     <h2>Your Dashboard</h2>
-<<<<<<< HEAD
-=======
-    <!-- <a href="{{ url_for('test') }}">Link zu Test</a><br><br> -->
->>>>>>> d5fed0b8fef6fc04c47ffc32eaa324c05a1391a8
+    <h3>Einnahmen</h3>
+    {% if income_transactions %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Wann</th>
+                <th>Was</th>
+                <th>Kategorie</th>
+                <th>Betrag</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction, data in income_transactions.items() %}
+        <tr>
+            <td>{{ data["datetime"] }}</td>
+            <td>{{ data["title"] }}</td>
+            <td>{{ data["category"] }}</td>
+            <td>{{ data["amount"] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Keine Einnahmen erfasst</p>
+    {% endif %}
+    <br><br>
 
+    <h3>Ausgaben</h3>
+    {% if expenses_transactions %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Wann</th>
+                <th>Was</th>
+                <th>Kategorie</th>
+                <th>Betrag</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for transaction, data in expenses_transactions.items() %}
+        <tr style='background-color: {{ expenses_categories[data["category"]]["color"] }}'>
+            <td>{{ data["datetime"] }}</td>
+            <td>{{ data["title"] }}</td>
+            <td>{{ data["category"] }}</td>
+            <td>{{ data["amount"] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Keine Ausgaben erfasst</p>
+    {% endif %}
+
+    <br><br>
 </body>
 </html>

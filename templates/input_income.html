@@ -3,19 +3,19 @@
     {% include "navigation.html" %}
 
     <h1>Welcome to your Expense Tracker</h1><br><br>
-    <h2>Neue Ausgabe erfassen</h2>
+    <h2>Neue Einnahmen erfassen</h2>
    <form method="post">
         <label for="eingabe_transaction_title">Titel:</label>
         <input type="text" id="eingabe_transaction_title" name="transaction_title">
        <br>
 
-       <label for="eingabe_transaction_amount">Deine Ausgabe:</label>
+       <label for="eingabe_transaction_amount">Deine Einnahme:</label>
        <input type="number" step=".05" id="eingabe_transaction_amount" name="transaction_amount">
        <br>
         <label for="transaction_category">Kategorie:</label>
         <select name="transaction_category" id="transaction_category" class="form-select" aria-label="">
-            {% for category, data in expenses_categories.items() %}
-                <option style='background-color: {{ data["color"] }}'>{{ data["name"] }}</option>
+            {% for category, data in income_categories.items() %}
+                <option>{{ data["name"] }}</option>
             {% endfor %}
         </select><br><br>
 
@@ -30,27 +30,21 @@
         <input type="text" id="eingabe_kategorie_name" name="category_name">
         <br>
 
-        <label for="eingabe_kategorie_color">Farbe:</label>
-        <input type="color" id="eingabe_kategorie_color" name="category_color">
-        <br>
-
         <input type="submit" value="erstellen">
     </form>
-    <br />
+    <br>
     <h4>Alle Kategorien:</h4>
-    {% if expenses_categories %}
+    {% if income_categories %}
         <table border="1">
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Farbe</th>
             </tr>
             </thead>
             <tbody>
-            {% for category, data in expenses_categories.items() %}
+            {% for category, data in income_categories.items() %}
                 <tr>
                     <td>{{ data["name"] }}</td>
-                    <td style='background-color: {{ data["color"] }}'>{{ data["color"] }}</td>
                 </tr>
             {% endfor %}
             </tbody>

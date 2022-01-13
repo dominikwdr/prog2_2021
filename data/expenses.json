@@ -1,23 +1,116 @@
 {
-  "categories": {
-    "0" : {
-      "name": "Essen"
+    "categories":{
+        "Essen":{
+            "name":"Essen",
+            "color":"#39b61f"
+        },
+        "Kleidung":{
+            "name":"Kleidung",
+            "color":"#ffa500"
+        },
+        "Hobbys":{
+            "name":"Hobbys",
+            "color":"#2596be"
+        },
+        "Party":{
+            "name":"Party",
+            "color":"#ae2424"
+        },
+        "Turnen":{
+            "name":"Turnen",
+            "color":"#6a3434"
+        },
+        "Test5347":{
+            "name":"Test5347",
+            "color":"#6730bb"
+        },
+        "":{
+            "name":"",
+            "color":"#aa2c2c"
+        },
+        "gr\u00fcm":{
+            "name":"gr\u00fcm",
+            "color":"#aa7474"
+        },
+        "Cool":{
+            "name":"Cool",
+            "color":"#491d1d"
+        },
+        "8925":{
+            "name":"8925",
+            "color":"#821c1c"
+        },
+        "lasttte":{
+            "name":"lasttte",
+            "color":"#a0f207"
+        }
     },
-    "1" : {
-      "name": "Kleidung"
-    },
-    "2" : {
-      "name": "Hobbys"
+    "transactions":{
+        "1641981702000":{
+            "title":"Pizza",
+            "amount":"50.6",
+            "category":"Essen",
+            "datetime":"12.01.2022 11:01:42"
+        },
+        "1642014690000":{
+            "title":"Salat_00",
+            "amount":"23",
+            "category":"Essen",
+            "datetime":"12.01.2022 20:11:30"
+        },
+        "1642015204000":{
+            "title":"Bowl",
+            "amount":"50",
+            "category":"Party",
+            "datetime":"12.01.2022 20:20:04"
+        },
+        "1642092339000":{
+            "title":"Test",
+            "amount":"50",
+            "category":"Party",
+            "datetime":"13.01.2022 17:45:39"
+        },
+        "1642094642000":{
+            "title":"TEstamje",
+            "amount":"85185",
+            "category":"Test5347",
+            "datetime":"13.01.2022 18:24:02"
+        },
+        "1642101263000":{
+            "title":"dinimum",
+            "amount":"6969",
+            "category":"Essen",
+            "datetime":"13.01.2022 20:14:23"
+        },
+        "1642101271000":{
+            "title":"dinimom",
+            "amount":"6969",
+            "category":"Essen",
+            "datetime":"13.01.2022 20:14:31"
+        },
+        "1642101433000":{
+            "title":"dinimom",
+            "amount":"6969",
+            "category":"Essen",
+            "datetime":"13.01.2022 20:17:13"
+        },
+        "1642101734000":{
+            "title":"nici69",
+            "amount":"88.20",
+            "category":"Turnen",
+            "datetime":"13.01.2022 20:22:14"
+        },
+        "1642103306000":{
+            "title":"dwaggsg",
+            "amount":"42",
+            "category":"Party",
+            "datetime":"13.01.2022 20:48:26"
+        },
+        "1642103859000":{
+            "title":"lastone",
+            "amount":"88",
+            "category":"Cool",
+            "datetime":"13.01.2022 20:57:39"
+        }
     }
-  },
-  "transactions": {
-    "0" : {
-      "amount": 250.20,
-      "category": 0
-    },
-    "1" : {
-      "amount": 15.50,
-      "category": 1
-    }
-  }
 }
