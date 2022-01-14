@@ -57,6 +57,34 @@
         <p>Keine Ausgaben erfasst</p>
     {% endif %}
 
+
+
+
+
+    <h2>Überblick</h2>
+    {% if statistics %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Kategorie</th>
+                <th>Betrag</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for key, value in statistics.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td><b>CHF {{ value }}</b></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+
+
+
     <br><br>
 </body>
 </html>

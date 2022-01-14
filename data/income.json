@@ -1,48 +1,36 @@
 {
     "categories":{
-        "Babysitten":{
-            "name":"Babysitten"
+        "Test":{
+            "name":"Test",
+            "color":"#951818"
         },
-        "Lohn 2":{
-            "name":"Lohn 2"
+        "Fahrzeuge":{
+            "name":"Fahrzeuge",
+            "color":"#541818"
         },
-        "Lohn Arbeitgeber 1":{
-            "name":"Lohn Arbeitgeber 1"
-        },
-        "Nebenjob":{
-            "name":"Nebenjob"
-        },
-        "test0":{
-            "name":"test0"
-        },
-        "test1":{
-            "name":"test1"
+        "Immobilien":{
+            "name":"Immobilien",
+            "color":"#48a378"
         }
     },
     "transactions":{
-        "1641989039000":{
-            "amount":"90.6",
-            "category":"Lohn 2",
-            "datetime":"12.01.2022 13:03:59",
-            "title":"Lohn August"
+        "1642173633000":{
+            "title":"Lohn vom Test",
+            "amount":"99",
+            "category":"Test",
+            "datetime":"14.01.2022 16:20:33"
         },
-        "1641989055000":{
-            "amount":"90.6",
-            "category":"Lohn 2",
-            "datetime":"12.01.2022 13:04:15",
-            "title":"Lohn August"
+        "1642173770000":{
+            "title":"Autowaschen",
+            "amount":"44.5",
+            "category":"Fahrzeuge",
+            "datetime":"14.01.2022 16:22:50"
         },
-        "1642103153000":{
-            "title":"pascal",
-            "amount":"58",
-            "category":"Lohn 2",
-            "datetime":"13.01.2022 20:45:53"
-        },
-        "1642103885000":{
-            "title":"Test99",
-            "amount":"98",
-            "category":"Lohn 2",
-            "datetime":"13.01.2022 20:58:05"
+        "1642176590000":{
+            "title":"Hausreinigung",
+            "amount":"56",
+            "category":"Immobilien",
+            "datetime":"14.01.2022 17:09:50"
         }
     }
 }

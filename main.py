@@ -9,19 +9,54 @@ app = Flask("XPENSE")
 
 
 #Index-Seite
+
 @app.route("/")
 def index():
-    r = open("data/expenses.json")
-    expenses_data = json.load(r)
-    w = open("data/income.json")
-    income_data = json.load(w)
+    e = open("data/expenses.json")
+    expenses_data = json.load(e)
+    i = open("data/income.json")
+    income_data = json.load(i)
 
-    print(expenses_data)
     expenses_categories = expenses_data["categories"]
     expenses_transactions = expenses_data["transactions"]
 
     income_categories = income_data["categories"]
     income_transactions = income_data["transactions"]
+
+
+    #Berechnungen
+
+    number_expenses = len(expenses_data)
+    total_expenses = float(0.00)
+    average_expense = float(0.00)
+    number_income = len(income_data)
+    total_income = float(0.00)
+    highest_expense = float(0.00)
+    highest_income = float(0.00)
+
+    if number_expenses > 0:
+
+        for entry in expenses_transactions:
+            total_expenses = total_expenses + float(str(expenses_transactions[entry]["amount"]))
+            if float(str(expenses_transactions[entry]["amount"])) > highest_expense:
+                highest_expense = float(str(expenses_transactions[entry]["amount"]))
+        average_expense = round(total_expenses / number_expenses, 2)
+
+    if number_income > 0:
+        for entry in income_transactions:
+            total_income += float(income_transactions[entry]["amount"])
+            if float(str(income_transactions[entry]["amount"])) > highest_expense:
+                highest_income = float(str(income_transactions[entry]["amount"]))
+
+    statistics = {
+        "Einnahmen total": total_income,
+        "Ausgaben total": total_expenses,
+        "Übriges Guthaben": total_income - total_expenses,
+        "Höchste Ausgabe": highest_expense,
+        "Höchste Einnahme": highest_income,
+        "Durchschnittliche Ausgabe pro Transaktion": average_expense
+    }
+
 
     with open('data/expenses.json', 'w') as f:
         json.dump(expenses_data, f, indent=4, separators=(',', ':'))
@@ -30,17 +65,17 @@ def index():
 
     return render_template('index.html', expenses_transactions=expenses_transactions,
                            expenses_categories=expenses_categories, income_transactions=income_transactions,
-                           income_categories=income_categories)
-
+                           income_categories=income_categories, statistics=statistics)
 
 
 
 
 #Input für Geldausgaben
+
 @app.route("/input-expenses", methods=['GET', 'POST'])
 def input_expenses():
-    r = open("data/expenses.json")
-    expenses_data = json.load(r)
+    e = open("data/expenses.json")
+    expenses_data = json.load(e)
 
     expenses_categories = expenses_data["categories"]
     expenses_transactions = expenses_data["transactions"]
@@ -82,10 +117,11 @@ def input_expenses():
 
 
 #Input für Geldeinnahmen
+
 @app.route("/input-income", methods=['GET', 'POST'])
 def input_income():
-    w = open("data/income.json")
-    income_data = json.load(w)
+    i = open("data/income.json")
+    income_data = json.load(i)
 
     income_categories = income_data["categories"]
     income_transactions = income_data["transactions"]
@@ -126,7 +162,7 @@ def input_income():
 
 
 
-
+#Rest Python
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
