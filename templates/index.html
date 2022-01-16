@@ -2,12 +2,12 @@
 <body>
     {% include "navigation.html" %}
 
-    <h1>Welcome to your Expense Tracker</h1>
-    <h2>Your Dashboard</h2>
-    <h3>Einnahmen</h3>
+    <h1>XPENSE Dashboard</h1>
+    <hr class="line">
+    <h2>Einnahmen</h2>
     {% if income_transactions %}
-    <table border="1">
-        <thead>
+    <table class="center table table-striped table-borderless w-50">
+        <thead class="thead-dark">
             <tr>
                 <th>Wann</th>
                 <th>Was</th>
@@ -31,11 +31,12 @@
     {% endif %}
     <br><br>
 
-    <h3>Ausgaben</h3>
+    <h2>Ausgaben</h2>
     {% if expenses_transactions %}
-    <table border="1">
-        <thead>
+    <table class="center table table-striped table-borderless w-50">
+        <thead class="thead-dark">
             <tr>
+                <th>test</th>
                 <th>Wann</th>
                 <th>Was</th>
                 <th>Kategorie</th>
@@ -44,7 +45,8 @@
         </thead>
         <tbody>
         {% for transaction, data in expenses_transactions.items() %}
-        <tr style='background-color: {{ expenses_categories[data["category"]]["color"] }}'>
+        <tr>
+            <td><div class="dot" style='background-color: {{ expenses_categories[data["category"]]["color"] }}'></div></td>
             <td>{{ data["datetime"] }}</td>
             <td>{{ data["title"] }}</td>
             <td>{{ data["category"] }}</td>
@@ -63,7 +65,7 @@
 
     <h2>Überblick</h2>
     {% if statistics %}
-    <table border="1">
+    <table class="center table table-dark table-borderless w-50">
         <thead>
             <tr>
                 <th>Kategorie</th>
@@ -87,4 +89,7 @@
 
     <br><br>
 </body>
+
+{% include "footer.html" %}
+
 </html>
