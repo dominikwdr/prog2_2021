@@ -1,36 +1,32 @@
 {
     "categories":{
-        "Test":{
-            "name":"Test",
-            "color":"#951818"
+        "Lohn 1":{
+            "name":"Lohn 1",
+            "color":"#890101"
         },
-        "Fahrzeuge":{
-            "name":"Fahrzeuge",
-            "color":"#541818"
-        },
-        "Immobilien":{
-            "name":"Immobilien",
-            "color":"#48a378"
+        "Onlineshop":{
+            "name":"Onlineshop",
+            "color":"#dc932e"
         }
     },
     "transactions":{
-        "1642173633000":{
-            "title":"Lohn vom Test",
-            "amount":"99",
-            "category":"Test",
-            "datetime":"14.01.2022 16:20:33"
+        "1642583432000":{
+            "title":"August",
+            "amount":"4500.00",
+            "category":"Lohn 1",
+            "datetime":"19.01.2022 10:10:32"
         },
-        "1642173770000":{
-            "title":"Autowaschen",
-            "amount":"44.5",
-            "category":"Fahrzeuge",
-            "datetime":"14.01.2022 16:22:50"
+        "1642583526000":{
+            "title":"Verkauf Shirts",
+            "amount":"655.50",
+            "category":"Onlineshop",
+            "datetime":"19.01.2022 10:12:06"
         },
-        "1642176590000":{
-            "title":"Hausreinigung",
-            "amount":"56",
-            "category":"Immobilien",
-            "datetime":"14.01.2022 17:09:50"
+        "1642584346000":{
+            "title":"September",
+            "amount":"4350.00",
+            "category":"Lohn 1",
+            "datetime":"19.01.2022 10:25:46"
         }
     }
 }

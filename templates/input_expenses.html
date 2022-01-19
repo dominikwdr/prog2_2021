@@ -2,56 +2,69 @@
 <body>
     {% include "navigation.html" %}
 
-    <h1>Welcome to your Expense Tracker</h1><br><br>
+    <h1>XPENSE Ausgaben</h1>
+    <hr class="line">
+
     <h2>Neue Ausgabe erfassen</h2>
-   <form method="post">
-        <label for="eingabe_transaction_title">Titel:</label>
-        <input type="text" id="eingabe_transaction_title" name="transaction_title">
-       <br>
-
-       <label for="eingabe_transaction_amount">Deine Ausgabe:</label>
-       <input type="number" step=".05" id="eingabe_transaction_amount" name="transaction_amount">
-       <br>
-        <label for="transaction_category">Kategorie:</label>
-        <select name="transaction_category" id="transaction_category" class="form-select" aria-label="">
-            {% for category, data in expenses_categories.items() %}
-                <option style='background-color: {{ data["color"] }}'>{{ data["name"] }}</option>
-            {% endfor %}
-        </select><br><br>
-
-       <input type="submit" value="erfassen"><br><br>
-    </form>
-
-
-<br>
-    <h3>Kategorien</h3>
-    <h4>Kategorie erstellen:</h4>
     <form method="post">
-        <label for="eingabe_kategorie_name">Name:</label>
-        <input type="text" id="eingabe_kategorie_name" name="category_name">
-        <br>
 
-        <label for="eingabe_kategorie_color">Farbe:</label>
-        <input type="color" id="eingabe_kategorie_color" name="category_color">
-        <br>
+        <div class="input-group w-25 pb-3 center d-flex justify-content-center">
+            <input type="text" class="form-control col-6" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="eingabe_transaction_title" name="transaction_title" placeholder="Titel eintragen">
 
-        <input type="submit" value="erstellen">
+            <input type="number" step=".05" id="eingabe_transaction_amount" name="transaction_amount" class="col-6" placeholder="Enter CHF">
+        </div>
+
+        <div class="input-group mb-3 center d-flex justify-content-center">
+            <div class="input-group-prepend d-flex">
+                <span class="input-group-text" id="inputGroup-sizing-large">Kategorie wählen</span>
+            </div>
+
+            <select name="transaction_category" id="transaction_category1" class="form-select col-2">
+            {% for category, data in expenses_categories.items() %}
+                <option>{{ data["name"] }}</option>
+            {% endfor %}
+            </select>
+        </div>
+
+       <button type="submit" class="btn btn-success w-25">erfassen</button><br><br>
+
     </form>
-    <br />
-    <h4>Alle Kategorien:</h4>
+
+    <br>
+
+    <h2>Kategorie erstellen</h2>
+    <form method="post">
+
+        <div class="input-group mb-3 center w-25 d-flex justify-content-center">
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="eingabe_kategorie_name" name="category_name" placeholder="Kategoriename eintragen">
+        </div>
+
+        <div class="input-group mb-3 center w-25 d-flex justify-content-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-large" for="eingabe_kategorie_color">Farbe wählen</span>
+            </div>
+            <input type="color" name="category_color" class="form-control form-control-color center d-flex justify-content-center" id="eingabe_kategorie_color">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-25">erstellen</button>
+    </form>
+
+    <br>
+
+    <h2>Bestehende Kategorien</h2>
     {% if expenses_categories %}
-        <table border="1">
-            <thead>
+        <table class="center table w-50 mb-5">
+            <thead class="thead-dark">
             <tr>
-                <th>Name</th>
-                <th>Farbe</th>
+                <th class="col-6">Kategorie</th>
+                <th class="col-6">HEX-Code</th>
             </tr>
             </thead>
             <tbody>
             {% for category, data in expenses_categories.items() %}
                 <tr>
-                    <td>{{ data["name"] }}</td>
-                    <td style='background-color: {{ data["color"] }}'>{{ data["color"] }}</td>
+                    <td><div class="d-flex"><div class="dot d-inline-block" style='background-color: {{ data["color"] }}'></div><div style="padding-left: 10px" class="d-inline-block">{{ data["name"] }}</div></div></td>
+                    <td>{{ data["color"] }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -61,7 +74,5 @@
     {% endif %}
 
 </body>
-
 {% include "footer.html" %}
-
 </html>

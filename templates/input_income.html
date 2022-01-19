@@ -2,49 +2,64 @@
 <body>
     {% include "navigation.html" %}
 
-    <h1>Welcome to your Expense Tracker</h1><br><br>
-    <h2>Neue Einnahmen erfassen</h2>
-   <form method="post">
-        <label for="eingabe_transaction_title">Titel:</label>
-        <input type="text" id="eingabe_transaction_title" name="transaction_title">
-       <br>
+    <h1>XPENSE Einnahmen</h1>
+    <hr class="line">
 
-       <label for="eingabe_transaction_amount">Deine Einnahme:</label>
-       <input type="number" step=".05" id="eingabe_transaction_amount" name="transaction_amount">
-       <br>
-        <label for="transaction_category">Kategorie:</label>
-        <select name="transaction_category" id="transaction_category" class="form-select" aria-label="">
+    <h2>Neue Einnahmen erfassen</h2>
+    <form method="post">
+
+        <div class="input-group mb-3 w-25 center d-flex justify-content-center">
+            <input type="text" class="form-control col-6" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="eingabe_transaction_title" name="transaction_title" placeholder="Titel eintragen">
+
+            <input type="number" step=".05" id="eingabe_transaction_amount" name="transaction_amount" placeholder="Enter CHF" class="col-6">
+        </div>
+
+        <div class="input-group mb-3 center d-flex justify-content-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-large">Kategorie wählen</span>
+            </div>
+            <select name="transaction_category" id="transaction_category" class="form-select col-2" aria-label="">
             {% for category, data in income_categories.items() %}
                 <option>{{ data["name"] }}</option>
             {% endfor %}
-        </select><br><br>
+            </select>
+        </div>
 
-       <input type="submit" value="erfassen"><br><br>
+       <button type="submit" class="btn btn-success w-25 mb-5">erfassen</button>
     </form>
 
-<br>
-    <h3>Kategorien</h3>
-    <h4>Kategorie erstellen:</h4>
+
+    <h2>Kategorie erstellen</h2>
+
     <form method="post">
-        <label for="eingabe_kategorie_name">Name:</label>
-        <input type="text" id="eingabe_kategorie_name" name="category_name">
-        <br>
+        <div class="input-group mb-3 w-25 center d-flex justify-content-center">
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="eingabe_kategorie_name" name="category_name" placeholder="Kategoriename eintragen">
+        </div>
 
-        <input type="submit" value="erstellen">
+        <div class="input-group mb-3 w-25 center d-flex justify-content-center">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-large" for="eingabe_kategorie_color">Farbe wählen</span>
+            </div>
+            <input type="color" name="category_color" class="form-control form-control-color w-25 center d-flex justify-content-center" id="eingabe_kategorie_color">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-25 mb-5">erstellen</button>
     </form>
-    <br>
-    <h4>Alle Kategorien:</h4>
+
+    <h2>Bestehende Kategorien</h2>
     {% if income_categories %}
-        <table border="1">
-            <thead>
+        <table class="center table w-50 mb-5">
+            <thead class="thead-dark">
             <tr>
-                <th>Name</th>
+                <th class="col-6">Kategorie</th>
+                <th class="col-6">HEX-Code</th>
             </tr>
             </thead>
             <tbody>
             {% for category, data in income_categories.items() %}
                 <tr>
-                    <td>{{ data["name"] }}</td>
+                    <td><div class="d-flex"><div class="dot d-inline-block" style='background-color: {{ data["color"] }}'></div><div style="padding-left: 10px" class="d-inline-block">{{ data["name"] }}</div></div></td>
+                    <td>{{ data["color"] }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -54,7 +69,5 @@
     {% endif %}
 
 </body>
-
 {% include "footer.html" %}
-
 </html>

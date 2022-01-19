@@ -1,36 +1,52 @@
 {
     "categories":{
-        "Fahrzeuge":{
-            "name":"Fahrzeuge",
-            "color":"#e97f07"
+        "Essen":{
+            "name":"Essen",
+            "color":"#273490"
         },
-        "Immobilien":{
-            "name":"Immobilien",
-            "color":"#4a31c9"
+        "Sport":{
+            "name":"Sport",
+            "color":"#811818"
         },
-        "Party":{
-            "name":"Party",
-            "color":"#98cc28"
+        "Wohnen":{
+            "name":"Wohnen",
+            "color":"#ff0000"
+        },
+        "Hobby":{
+            "name":"Hobby",
+            "color":"#f9e71a"
         }
     },
     "transactions":{
-        "1642167815000":{
-            "title":"VW Golf",
-            "amount":"20000",
-            "category":"Fahrzeuge",
-            "datetime":"14.01.2022 14:43:35"
+        "1642582990000":{
+            "title":"Mittagessen",
+            "amount":"16.50",
+            "category":"Essen",
+            "datetime":"19.01.2022 10:03:10"
         },
-        "1642168644000":{
-            "title":"Hausreinigung",
-            "amount":"95",
-            "category":"Immobilien",
-            "datetime":"14.01.2022 14:57:24"
+        "1642583004000":{
+            "title":"Sofa",
+            "amount":"699.95",
+            "category":"Wohnen",
+            "datetime":"19.01.2022 10:03:24"
         },
-        "1642168698000":{
-            "title":"Bier",
-            "amount":"52.30",
-            "category":"Party",
-            "datetime":"14.01.2022 14:58:18"
+        "1642583023000":{
+            "title":"Joggingschuhe",
+            "amount":"199.00",
+            "category":"Sport",
+            "datetime":"19.01.2022 10:03:43"
+        },
+        "1642583175000":{
+            "title":"Ersatzteile",
+            "amount":"40.15",
+            "category":"Hobby",
+            "datetime":"19.01.2022 10:06:15"
+        },
+        "1642584416000":{
+            "title":"Wocheneinkauf",
+            "amount":"146.35",
+            "category":"Essen",
+            "datetime":"19.01.2022 10:26:56"
         }
     }
 }

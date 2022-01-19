@@ -1,22 +1,23 @@
 /*
 
     Autor:          Dominik Werder
-    Datum:          03.01.2021
-
-    Colors:
+    Datum:          19.01.2022
+    Colors:         Blue: #014d81
 
 */
 
+
 /* body */
+
 body {
-    text-align: center;
+    text-align: center !important;
 }
 
 
 /* fonts */
 
 h1 {
-    color: #8b4000;
+    color: #014d81;
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
@@ -29,6 +30,7 @@ h2 {
 }
 
 
+/* navbar */
 
 .topnav-centered {
   float: none;
@@ -37,7 +39,6 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 
 /* General */
@@ -50,9 +51,11 @@ h2 {
 .line {
     width: 65vw;
     border-width: 2px;
-    border-color: #8b4000;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-color: #014d81;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dot {

@@ -4,24 +4,25 @@
 
     <h1>XPENSE Dashboard</h1>
     <hr class="line">
+
     <h2>Einnahmen</h2>
     {% if income_transactions %}
     <table class="center table table-striped table-borderless w-50">
         <thead class="thead-dark">
             <tr>
-                <th>Wann</th>
-                <th>Was</th>
-                <th>Kategorie</th>
-                <th>Betrag</th>
+                <th class="col-3">Kategorie</th>
+                <th class="col-3">Was</th>
+                <th class="col-3">Wann</th>
+                <th class="col-3">Betrag</th>
             </tr>
         </thead>
         <tbody>
         {% for transaction, data in income_transactions.items() %}
         <tr>
-            <td>{{ data["datetime"] }}</td>
+            <td><div class="d-flex"><div class="dot d-inline-block" style='background-color: {{ income_categories[data["category"]]["color"] }}'></div><div style="padding-left: 10px" class="d-inline-block">{{ data["category"] }}</div></div></td>
             <td>{{ data["title"] }}</td>
-            <td>{{ data["category"] }}</td>
-            <td>{{ data["amount"] }}</td>
+            <td>{{ data["datetime"] }}</td>
+            <td>CHF {{ data["amount"] }}</td>
         </tr>
         {% endfor %}
         </tbody>
@@ -29,28 +30,26 @@
     {% else %}
         <p>Keine Einnahmen erfasst</p>
     {% endif %}
-    <br><br>
+
 
     <h2>Ausgaben</h2>
     {% if expenses_transactions %}
     <table class="center table table-striped table-borderless w-50">
         <thead class="thead-dark">
             <tr>
-                <th>test</th>
-                <th>Wann</th>
-                <th>Was</th>
-                <th>Kategorie</th>
-                <th>Betrag</th>
+                <th class="col-3">Kategorie</th>
+                <th class="col-3">Was</th>
+                <th class="col-3">Wann</th>
+                <th class="col-3">Betrag</th>
             </tr>
         </thead>
         <tbody>
         {% for transaction, data in expenses_transactions.items() %}
         <tr>
-            <td><div class="dot" style='background-color: {{ expenses_categories[data["category"]]["color"] }}'></div></td>
-            <td>{{ data["datetime"] }}</td>
+            <td><div class="d-flex"><div class="dot d-inline-block" style='background-color: {{ expenses_categories[data["category"]]["color"] }}'></div><div style="padding-left: 10px" class="d-inline-block">{{ data["category"] }}</div></div></td>
             <td>{{ data["title"] }}</td>
-            <td>{{ data["category"] }}</td>
-            <td>{{ data["amount"] }}</td>
+            <td>{{ data["datetime"] }}</td>
+            <td>CHF {{ data["amount"] }}</td>
         </tr>
         {% endfor %}
         </tbody>
@@ -60,16 +59,13 @@
     {% endif %}
 
 
-
-
-
     <h2>Überblick</h2>
     {% if statistics %}
-    <table class="center table table-dark table-borderless w-50">
+    <table class="center table table-dark table-borderless w-50 mb-5">
         <thead>
             <tr>
-                <th>Kategorie</th>
-                <th>Betrag</th>
+                <th class="col-9">Kategorie</th>
+                <th class="col-3">Betrag</th>
             </tr>
         </thead>
         <tbody>
@@ -83,13 +79,6 @@
     </table>
     {% endif %}
 
-
-
-
-
-    <br><br>
 </body>
-
 {% include "footer.html" %}
-
 </html>
