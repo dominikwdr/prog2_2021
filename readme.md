@@ -1,11 +1,5 @@
 # XPENSE - PRO2_DBM20VZ - Dominik Werder
 
-Todo:
-- Erklärungen von Überlegungen und Struktur des Codes in Form von Kommentaren und Funktionsbeschreibungen im Code.
-- Eine Projektbeschreibung mit Überlegungen und Entstehungsdetails mit Projektidee und Diagramme.
-- Anleitung oder Walkthrough wie das Projekt installiert und benutzt wird, welche Funktionen vorhanden sind und wie diese eingesetzt werden.
-
-
 ## Projektbeschreibung
 ### Über XPENSE
 XPENSE ist ein Programm zur Übersicht der eigenen Einnahmen und Ausgaben, also ein kleines Buchhaltungsprogramm.
